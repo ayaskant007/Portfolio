@@ -7,16 +7,30 @@ import Magnet from "../ui/Magnet";
 
 export default function Contact() {
     return (
-        <section className="py-20 px-4 md:px-10 bg-neutral-950 text-white border-t border-neutral-900">
+        <section id="contact" className="py-20 px-4 md:px-10 bg-neutral-950 text-white border-t border-neutral-900">
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter">
-                        LET'S <span className="text-red-500">CONNECT</span>
-                    </h2>
+                    <div className="overflow-hidden mb-12">
+                        <motion.div
+                            animate={{ x: [0, -1000] }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 20,
+                                ease: "linear",
+                            }}
+                            className="flex whitespace-nowrap"
+                        >
+                            {[...Array(4)].map((_, i) => (
+                                <h2 key={i} className="text-6xl md:text-8xl font-black tracking-tighter mr-12 text-transparent stroke-text-red">
+                                    LET'S CONNECT <span className="text-red-600 stroke-none">LET'S CONNECT</span>
+                                </h2>
+                            ))}
+                        </motion.div>
+                    </div>
                     <p className="text-neutral-400 text-lg mb-8">
                         Open to collaborations, hackathons, and innovative projects.
                     </p>

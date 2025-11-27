@@ -5,9 +5,18 @@ import { motion } from "framer-motion";
 // @ts-ignore
 import MagicBento from "../MagicBento";
 
+interface BentoCard {
+    title: string;
+    description: string;
+    label: string;
+    color: string;
+    colSpan?: number;
+    rowSpan?: number;
+}
+
 export default function Experience() {
     return (
-        <section className="py-20 px-4 md:px-10 bg-black text-white border-t border-neutral-900">
+        <section id="experience" className="py-20 px-4 md:px-10 bg-black text-white border-t border-neutral-900">
             <div className="max-w-4xl mx-auto text-center">
                 <motion.h2
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -18,29 +27,42 @@ export default function Experience() {
                     AFFILIATIONS
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                    <div className="p-8 border border-neutral-800 rounded-2xl bg-neutral-900/40 backdrop-blur-md hover:border-red-500/50 transition-colors duration-500">
-                        <h3 className="text-2xl font-semibold mb-2">The Tech Mobius Club</h3>
-                        <p className="text-neutral-400 mb-4">Indraprastha International School</p>
-                        <p className="text-lg text-neutral-300">
-                            Developed and maintained the official website:{" "}
-                            <a
-                                href="https://techmobius.in"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-red-400 hover:text-red-300 underline underline-offset-4"
-                            >
-                                techmobius.in
-                            </a>
-                        </p>
-                    </div>
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className="group relative p-8 rounded-2xl bg-neutral-900/40 backdrop-blur-md border border-white/5 hover:border-red-500/50 transition-all duration-500 overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative z-10">
+                            <h3 className="text-3xl font-bold mb-2 text-white group-hover:text-red-500 transition-colors">The Tech Mobius Club</h3>
+                            <p className="text-neutral-400 mb-6 font-light tracking-wide">Indraprastha International School</p>
+                            <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/10">
+                                <span className="text-sm text-neutral-500 uppercase tracking-widest">Role: Lead Developer</span>
+                                <a
+                                    href="https://techmobius.in"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-red-400 transition-colors"
+                                >
+                                    Visit Site &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </motion.div>
 
-                    <div className="p-8 border border-neutral-800 rounded-2xl bg-neutral-900/40 backdrop-blur-md hover:border-red-500/50 transition-colors duration-500">
-                        <h3 className="text-2xl font-semibold mb-2">Student</h3>
-                        <p className="text-neutral-400 mb-4">Indraprastha International School</p>
-                        <p className="text-lg text-neutral-300">
-                            Class 9
-                        </p>
-                    </div>
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className="group relative p-8 rounded-2xl bg-neutral-900/40 backdrop-blur-md border border-white/5 hover:border-red-500/50 transition-all duration-500 overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative z-10">
+                            <h3 className="text-3xl font-bold mb-2 text-white group-hover:text-red-500 transition-colors">Student</h3>
+                            <p className="text-neutral-400 mb-6 font-light tracking-wide">Indraprastha International School</p>
+                            <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/10">
+                                <span className="text-sm text-neutral-500 uppercase tracking-widest">Grade: Class 9</span>
+                                <span className="text-neutral-600">2018 - Present</span>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
 
                 <motion.h2
@@ -102,7 +124,7 @@ export default function Experience() {
                                     label: "Full Stack",
                                     color: "rgba(23, 23, 23, 0.8)",
                                     colSpan: 1,
-                                    rowSpan: 1
+                                    rowSpan: 2
                                 },
                                 {
                                     title: "React",
@@ -112,7 +134,7 @@ export default function Experience() {
                                     colSpan: 2,
                                     rowSpan: 1
                                 }
-                            ]}
+                            ] as BentoCard[]}
                             glowColor="239, 68, 68" // Red
                             enableStars={true}
                             enableSpotlight={true}
