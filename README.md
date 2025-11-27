@@ -58,7 +58,7 @@ This project can be deployed easily on Netlify.
 
 Netlify Deploy Status:
 
-(Replace the badge URL with your actual Netlify badge.)
+DEPLOYED
 
 📄 License
 This project is licensed under the MIT License.
