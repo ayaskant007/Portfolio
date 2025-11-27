@@ -3,7 +3,7 @@
 A modern, animated personal portfolio website built with **Next.js**, **React**, **Tailwind CSS**, and **TypeScript**.  
 This project showcases my work, skills, and experience through a clean UI and smooth interactions powered by **GSAP** and **Framer Motion**.
 
-🌐 **Live Demo:** *[Deploy Link Placeholder]*  
+🌐 **Live Demo:** *[Visit!](https://portfolio-007a.netlify.app)*  
 🚀 **Deployment:** Netlify
 
 ---
