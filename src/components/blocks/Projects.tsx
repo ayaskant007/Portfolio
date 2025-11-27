@@ -33,7 +33,7 @@ export default function Projects() {
                             link: project.link,
                             text: project.title,
                             image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2070", // Placeholder or project image
-                        })) as unknown) as MenuItem[]}
+                        })) as any)}
                     />
                 </div>
             </div>
