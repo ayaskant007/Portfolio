@@ -98,63 +98,70 @@ export default function Experience() {
                                     title: "C++",
                                     description: "Core Language",
                                     label: "Expert",
-                                    color: "rgba(23, 23, 23, 0.95)",
+                                    color: "rgba(23, 23, 23, 0.3)", // More transparent
                                     colSpan: 2,
                                     rowSpan: 2,
                                     // @ts-ignore
-                                    fontSize: "text-[8rem] md:text-[10rem] font-black font-mono tracking-tighter"
+                                    fontSize: "font-black font-sans tracking-tighter", // Switched to font-sans for better weight support
+                                    titleStyle: { fontSize: "40cqw", lineHeight: "0.8" } // Massive container-relative size
                                 },
                                 {
                                     title: "Python",
                                     description: "AI & Scripting",
                                     label: "Advanced",
-                                    color: "rgba(23, 23, 23, 0.95)",
+                                    color: "rgba(23, 23, 23, 0.3)",
                                     colSpan: 1,
                                     rowSpan: 1,
                                     // @ts-ignore
-                                    fontSize: "text-[3rem] md:text-[4rem] font-black font-mono tracking-tighter"
+                                    fontSize: "font-black font-sans tracking-tighter",
+                                    titleStyle: { fontSize: "22cqw", lineHeight: "0.8" }
                                 },
                                 {
                                     title: "C#",
                                     description: "Game Dev",
                                     label: "Intermediate",
-                                    color: "rgba(23, 23, 23, 0.95)",
+                                    color: "rgba(23, 23, 23, 0.3)",
                                     colSpan: 1,
                                     rowSpan: 1,
                                     // @ts-ignore
-                                    fontSize: "text-[3rem] md:text-[4rem] font-black font-mono tracking-tighter"
+                                    fontSize: "font-black font-sans tracking-tighter",
+                                    titleStyle: { fontSize: "35cqw", lineHeight: "0.8" }
                                 },
                                 {
                                     title: "GSAP 3",
                                     description: "Animations",
                                     label: "Creative",
-                                    color: "rgba(23, 23, 23, 0.95)",
+                                    color: "rgba(23, 23, 23, 0.3)",
                                     colSpan: 1,
                                     rowSpan: 2,
                                     // @ts-ignore
-                                    fontSize: "text-[4rem] md:text-[6rem] font-black font-mono tracking-tighter"
+                                    fontSize: "font-black font-sans tracking-tighter",
+                                    titleStyle: { fontSize: "25cqw", lineHeight: "0.8" }
                                 },
                                 {
                                     title: "Web Stack",
                                     description: "HTML, CSS, JS",
                                     label: "Full Stack",
-                                    color: "rgba(23, 23, 23, 0.95)",
+                                    color: "rgba(23, 23, 23, 0.3)",
                                     colSpan: 1,
                                     rowSpan: 2,
                                     // @ts-ignore
-                                    fontSize: "text-[4rem] md:text-[6rem] font-black font-mono tracking-tighter"
+                                    fontSize: "font-black font-sans tracking-tighter",
+                                    titleStyle: { fontSize: "25cqw", lineHeight: "0.8" }
                                 },
                                 {
                                     title: "React",
                                     description: "UI Library",
                                     label: "Frontend",
-                                    color: "rgba(23, 23, 23, 0.95)",
+                                    color: "rgba(23, 23, 23, 0.3)",
                                     colSpan: 2,
                                     rowSpan: 1,
                                     // @ts-ignore
-                                    fontSize: "text-[5rem] md:text-[7rem] font-black font-mono tracking-tighter"
+                                    fontSize: "font-black font-sans tracking-tighter",
+                                    titleStyle: { fontSize: "35cqw", lineHeight: "0.8" }
                                 }
                             ] as any[]}
+                            textAutoHide={false}
                             glowColor="220, 38, 38" // Stronger Red
                             enableStars={true}
                             enableSpotlight={true}

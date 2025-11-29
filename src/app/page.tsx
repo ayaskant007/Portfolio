@@ -1,6 +1,7 @@
 import Hero from "@/components/blocks/Hero";
 import Projects from "@/components/blocks/Projects";
 import Experience from "@/components/blocks/Experience";
+import HorizontalCTA from "@/components/blocks/HorizontalCTA";
 import Contact from "@/components/blocks/Contact";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero />
         <Projects />
         <Experience />
+        <HorizontalCTA />
       </div>
       <Contact />
     </main>

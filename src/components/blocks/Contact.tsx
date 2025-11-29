@@ -6,6 +6,16 @@ import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Magnet from "../ui/Magnet";
 
 export default function Contact() {
+    const [time, setTime] = React.useState("");
+
+    React.useEffect(() => {
+        setTime(new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }));
+        const interval = setInterval(() => {
+            setTime(new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }));
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <footer id="contact" className="fixed bottom-0 left-0 w-full h-screen min-h-[800px] bg-neutral-950 text-white flex flex-col justify-between -z-10 px-4 md:px-10 py-20">
             {/* Background Text */}
@@ -83,7 +93,7 @@ export default function Contact() {
                 <div className="text-right">
                     <p className="text-neutral-500 text-sm mb-2">LOCAL TIME</p>
                     <p className="text-xl font-mono text-red-500">
-                        {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })} IST
+                        {time} IST
                     </p>
                 </div>
             </div>
