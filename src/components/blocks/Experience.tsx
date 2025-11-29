@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useVelocity, useSpring } from "framer-motion";
 // @ts-ignore
 import MagicBento from "../MagicBento";
 
@@ -15,9 +15,14 @@ interface BentoCard {
 }
 
 export default function Experience() {
+    const { scrollYProgress } = useScroll();
+    const skewVelocity = useVelocity(scrollYProgress);
+    const skew = useTransform(skewVelocity, [0, 1], [0, 5], { clamp: false });
+    const smoothSkew = useSpring(skew, { stiffness: 400, damping: 90 });
+
     return (
-        <section id="experience" className="py-20 px-4 md:px-10 bg-black text-white border-t border-neutral-900">
-            <div className="max-w-4xl mx-auto text-center">
+        <section id="experience" className="py-20 px-4 md:px-10 bg-black text-white border-t border-neutral-900 relative">
+            <div className="max-w-4xl mx-auto text-center relative z-10">
                 <motion.h2
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -26,7 +31,7 @@ export default function Experience() {
                 >
                     AFFILIATIONS
                 </motion.h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-32">
                     <motion.div
                         whileHover={{ y: -5 }}
                         className="group relative p-8 rounded-2xl bg-neutral-900/40 backdrop-blur-md border border-white/5 hover:border-red-500/50 transition-all duration-500 overflow-hidden"
@@ -69,78 +74,93 @@ export default function Experience() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="text-3xl md:text-5xl font-bold mb-8 mt-16 tracking-tight"
+                    className="text-3xl md:text-5xl font-bold mb-8 mt-16 tracking-tight relative z-20 bg-black inline-block px-4"
                 >
                     TECHNICAL SKILLS
                 </motion.h2>
 
-                <div className="relative max-w-4xl mx-auto mt-16">
-                    {/* Background Text Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                        <span className="text-[15vw] md:text-[8rem] font-bold text-neutral-700/30 tracking-tighter whitespace-nowrap z-0">
+                <div className="relative max-w-4xl mx-auto mt-16 min-h-[800px]">
+                    {/* Sticky Background Text */}
+                    <div className="sticky top-1/3 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0 opacity-50 mix-blend-overlay">
+                        <span className="text-[15vw] md:text-[8rem] font-bold text-neutral-800 tracking-tighter whitespace-nowrap">
                             TECH STACK
                         </span>
                     </div>
 
-                    {/* Magic Bento Grid */}
-                    <div className="relative z-10 h-[600px] w-full">
+                    {/* Magic Bento Grid with Scroll Skew */}
+                    <motion.div
+                        className="relative z-10 w-full mt-[-100px]"
+                        style={{ skewY: smoothSkew }}
+                    >
                         <MagicBento
                             cards={[
                                 {
                                     title: "C++",
                                     description: "Core Language",
                                     label: "Expert",
-                                    color: "rgba(23, 23, 23, 0.8)", // Semi-transparent
+                                    color: "rgba(23, 23, 23, 0.95)",
                                     colSpan: 2,
-                                    rowSpan: 2
+                                    rowSpan: 2,
+                                    // @ts-ignore
+                                    fontSize: "text-[8rem] md:text-[10rem] font-black font-mono tracking-tighter"
                                 },
                                 {
                                     title: "Python",
                                     description: "AI & Scripting",
                                     label: "Advanced",
-                                    color: "rgba(23, 23, 23, 0.8)",
+                                    color: "rgba(23, 23, 23, 0.95)",
                                     colSpan: 1,
-                                    rowSpan: 1
+                                    rowSpan: 1,
+                                    // @ts-ignore
+                                    fontSize: "text-[3rem] md:text-[4rem] font-black font-mono tracking-tighter"
                                 },
                                 {
                                     title: "C#",
                                     description: "Game Dev",
                                     label: "Intermediate",
-                                    color: "rgba(23, 23, 23, 0.8)",
+                                    color: "rgba(23, 23, 23, 0.95)",
                                     colSpan: 1,
-                                    rowSpan: 1
+                                    rowSpan: 1,
+                                    // @ts-ignore
+                                    fontSize: "text-[3rem] md:text-[4rem] font-black font-mono tracking-tighter"
                                 },
                                 {
                                     title: "GSAP 3",
                                     description: "Animations",
                                     label: "Creative",
-                                    color: "rgba(23, 23, 23, 0.8)",
+                                    color: "rgba(23, 23, 23, 0.95)",
                                     colSpan: 1,
-                                    rowSpan: 2
+                                    rowSpan: 2,
+                                    // @ts-ignore
+                                    fontSize: "text-[4rem] md:text-[6rem] font-black font-mono tracking-tighter"
                                 },
                                 {
                                     title: "Web Stack",
                                     description: "HTML, CSS, JS",
                                     label: "Full Stack",
-                                    color: "rgba(23, 23, 23, 0.8)",
+                                    color: "rgba(23, 23, 23, 0.95)",
                                     colSpan: 1,
-                                    rowSpan: 2
+                                    rowSpan: 2,
+                                    // @ts-ignore
+                                    fontSize: "text-[4rem] md:text-[6rem] font-black font-mono tracking-tighter"
                                 },
                                 {
                                     title: "React",
                                     description: "UI Library",
                                     label: "Frontend",
-                                    color: "rgba(23, 23, 23, 0.8)",
+                                    color: "rgba(23, 23, 23, 0.95)",
                                     colSpan: 2,
-                                    rowSpan: 1
+                                    rowSpan: 1,
+                                    // @ts-ignore
+                                    fontSize: "text-[5rem] md:text-[7rem] font-black font-mono tracking-tighter"
                                 }
-                            ] as BentoCard[]}
-                            glowColor="239, 68, 68" // Red
+                            ] as any[]}
+                            glowColor="220, 38, 38" // Stronger Red
                             enableStars={true}
                             enableSpotlight={true}
                             enableBorderGlow={true}
                         />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
