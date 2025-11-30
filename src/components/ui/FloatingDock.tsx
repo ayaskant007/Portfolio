@@ -8,9 +8,13 @@ export default function FloatingDock() {
     const mouseX = useMotionValue(Infinity);
 
     const scrollToSection = (id: string) => {
+        if (id === "contact") {
+            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
+            return;
+        }
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     };
 
@@ -24,7 +28,7 @@ export default function FloatingDock() {
     return (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
             <motion.div
-                onMouseMove={(e) => mouseX.set(e.pageX)}
+                onMouseMove={(e) => mouseX.set(e.clientX)}
                 onMouseLeave={() => mouseX.set(Infinity)}
                 className="flex items-end gap-4 p-4 rounded-2xl bg-neutral-900/20 backdrop-blur-2xl border border-white/10 shadow-2xl"
             >

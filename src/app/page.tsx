@@ -3,6 +3,7 @@ import Projects from "@/components/blocks/Projects";
 import Experience from "@/components/blocks/Experience";
 import HorizontalCTA from "@/components/blocks/HorizontalCTA";
 import Contact from "@/components/blocks/Contact";
+import FloatingDock from "@/components/ui/FloatingDock";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <HorizontalCTA />
       </div>
       <Contact />
+      <FloatingDock />
     </main>
   );
 }
