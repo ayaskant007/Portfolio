@@ -5,15 +5,6 @@ import { motion, useScroll, useTransform, useVelocity, useSpring } from "framer-
 // @ts-ignore
 import MagicBento from "../MagicBento";
 
-interface BentoCard {
-    title: string;
-    description: string;
-    label: string;
-    color: string;
-    colSpan?: number;
-    rowSpan?: number;
-}
-
 export default function Experience() {
     const { scrollYProgress } = useScroll();
     const skewVelocity = useVelocity(scrollYProgress);

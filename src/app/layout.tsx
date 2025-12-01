@@ -16,12 +16,35 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ayaskant.dev"), // Replace with actual domain
   title: "Ayaskant Sahoo | Portfolio",
   description: "Developer & Student Portfolio - Creative, Dark, Bold.",
   keywords: ["Ayaskant Sahoo", "Portfolio", "Developer", "Student", "Next.js", "React", "Creative Developer"],
   authors: [{ name: "Ayaskant Sahoo" }],
   icons: {
     icon: "/avatar.png", // Use avatar as favicon
+  },
+  openGraph: {
+    title: "Ayaskant Sahoo | Portfolio",
+    description: "Developer & Student Portfolio - Creative, Dark, Bold.",
+    url: "https://ayaskant.dev",
+    siteName: "Ayaskant Sahoo",
+    images: [
+      {
+        url: "/avatar.png", // Fallback to avatar for now
+        width: 1200,
+        height: 630,
+        alt: "Ayaskant Sahoo Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ayaskant Sahoo | Portfolio",
+    description: "Developer & Student Portfolio - Creative, Dark, Bold.",
+    images: ["/avatar.png"],
   },
 };
 
