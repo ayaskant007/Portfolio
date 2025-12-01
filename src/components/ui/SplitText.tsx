@@ -46,7 +46,7 @@ export default function SplitText({ text, className, delay = 0 }: SplitTextProps
             variants={container}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className={className}
         >
             {letters.map((letter, index) => (

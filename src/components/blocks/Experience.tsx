@@ -21,7 +21,7 @@ export default function Experience() {
                     transition={{ duration: 0.8 }}
                     className="text-3xl md:text-5xl font-bold mb-8 tracking-tight flex justify-center"
                 >
-                    <SplitText text="AFFILIATIONS" delay={50} />
+                    <SplitText text="AFFILIATIONS" delay={0.2} />
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-32">
                     <motion.div
@@ -90,7 +90,7 @@ export default function Experience() {
                     transition={{ duration: 0.8 }}
                     className="text-3xl md:text-5xl font-bold mb-8 mt-16 tracking-tight relative z-20 bg-black inline-block px-4"
                 >
-                    <SplitText text="TECHNICAL SKILLS" delay={50} />
+                    <SplitText text="TECHNICAL SKILLS" delay={0.2} />
                 </motion.h2>
 
                 <div className="relative max-w-4xl mx-auto mt-16 min-h-[800px]">

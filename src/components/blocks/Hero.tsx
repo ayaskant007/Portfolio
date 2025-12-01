@@ -9,7 +9,7 @@ export default function Hero() {
             <StarField />
             <div className="z-10 text-center space-y-4 flex flex-col items-center">
                 <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl shadow-red-500/20">
-                    <Magnet padding={20} disabled={false} magnetStrength={5}>
+                    <Magnet strength={5}>
                         <img
                             src="/avatar.png"
                             alt="Ayaskant Sahoo"

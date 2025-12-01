@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Magnet from "../ui/Magnet";
+import Footer3D from "../ui/Footer3D";
 
 export default function Contact() {
     const [time, setTime] = React.useState("");
@@ -24,6 +25,8 @@ export default function Contact() {
                     SAY HELLO
                 </h1>
             </div>
+
+            <Footer3D />
 
             <div className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">

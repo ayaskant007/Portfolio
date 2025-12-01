@@ -25,7 +25,7 @@ export default function Projects() {
                         WORK
                     </h2>
                     <h2 className="text-5xl md:text-7xl font-bold relative z-10 tracking-tighter flex justify-center gap-4">
-                        <SplitText text="SELECTED" delay={50} /> <span className="text-red-600"><SplitText text="PROJECTS" delay={50} /></span>
+                        <SplitText text="SELECTED" delay={0.2} /> <span className="text-red-600"><SplitText text="PROJECTS" delay={0.2} /></span>
                     </h2>
                 </div>
                 <div className="h-[600px] w-full relative z-10">
