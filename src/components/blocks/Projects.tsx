@@ -6,6 +6,7 @@ import FlowingMenu from "../FlowingMenu";
 import { projects } from "@/data/projects";
 import { motion } from "framer-motion";
 import Iridescence from "../ui/Iridescence";
+import SplitText from "../ui/SplitText";
 
 
 interface MenuItem {
@@ -23,8 +24,8 @@ export default function Projects() {
                     <h2 className="text-[12vw] md:text-[8rem] font-black text-transparent stroke-text tracking-tighter opacity-20 select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none">
                         WORK
                     </h2>
-                    <h2 className="text-5xl md:text-7xl font-bold relative z-10 tracking-tighter">
-                        SELECTED <span className="text-red-600">PROJECTS</span>
+                    <h2 className="text-5xl md:text-7xl font-bold relative z-10 tracking-tighter flex justify-center gap-4">
+                        <SplitText text="SELECTED" delay={50} /> <span className="text-red-600"><SplitText text="PROJECTS" delay={50} /></span>
                     </h2>
                 </div>
                 <div className="h-[600px] w-full relative z-10">

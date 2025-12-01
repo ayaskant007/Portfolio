@@ -157,11 +157,11 @@ body {
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: oklch(0.627 0.265 29.234); /* Red */
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: oklch(0.577 0.245 27.325); /* Darker Red */
   }
 }
