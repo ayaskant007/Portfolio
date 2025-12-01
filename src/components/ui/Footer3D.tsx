@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
-import * as random from "maath/random/dist/maath-random.cjs";
+import * as random from "maath/random/dist/maath-random.esm";
 
 export default function Footer3D() {
     return (
@@ -17,7 +17,7 @@ export default function Footer3D() {
 
 function Stars(props: any) {
     const ref = useRef<any>(null);
-    const sphere = random.inSphere(new Float32Array(5000), { radius: 1.5 });
+    const [sphere] = useState(() => random.inSphere(new Float32Array(6000), { radius: 1.5 }));
 
     useFrame((state, delta) => {
         if (ref.current) {
