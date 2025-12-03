@@ -18,7 +18,9 @@ interface MenuItem {
 export default function Projects() {
     return (
         <section id="projects" className="min-h-screen w-full py-20 bg-neutral-950 text-white relative z-10 overflow-hidden">
-            <Iridescence />
+            <div className="absolute inset-0 z-0 opacity-40">
+                <Iridescence />
+            </div>
             <div className="w-full relative z-10">
                 <div className="relative mb-24 text-center">
                     <h2 className="text-[12vw] md:text-[8rem] font-black text-transparent stroke-text tracking-tighter opacity-20 select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none">

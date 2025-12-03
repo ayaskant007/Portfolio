@@ -2,9 +2,11 @@
 
 import React from "react";
 import { motion, useScroll, useTransform, useVelocity, useSpring } from "framer-motion";
+import { Code, Globe, GraduationCap, ExternalLink } from "lucide-react";
 // @ts-ignore
 import MagicBento from "../MagicBento";
 import SplitText from "../ui/SplitText";
+import TiltedCard from "../ui/TiltedCard";
 
 export default function Experience() {
     const { scrollYProgress } = useScroll();
@@ -24,64 +26,67 @@ export default function Experience() {
                     <SplitText text="AFFILIATIONS" delay={0.2} />
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-32">
-                    <motion.div
-                        whileHover={{ y: -5 }}
-                        className="group relative p-8 rounded-2xl bg-neutral-900/40 backdrop-blur-md border border-white/5 hover:border-red-500/50 transition-all duration-500 overflow-hidden"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="relative z-10">
-                            <h3 className="text-3xl font-bold mb-2 text-white group-hover:text-red-500 transition-colors">The Tech Mobius Club</h3>
-                            <p className="text-neutral-400 mb-6 font-light tracking-wide">Indraprastha International School</p>
-                            <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/10">
-                                <span className="text-sm text-neutral-500 uppercase tracking-widest">Role: Lead Developer</span>
+                    <TiltedCard className="h-[400px]">
+                        <div className="p-8 h-full flex flex-col justify-between">
+                            <div>
+                                <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-6 text-red-500">
+                                    <Code className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-3xl font-bold mb-2 text-white">The Tech Mobius Club</h3>
+                                <p className="text-neutral-400 font-light tracking-wide">Indraprastha International School</p>
+                            </div>
+                            <div className="pt-6 border-t border-white/10">
+                                <span className="block text-xs text-neutral-500 uppercase tracking-widest mb-2">Role: Lead Developer</span>
                                 <a
                                     href="https://techmobius.in"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-white hover:text-red-400 transition-colors"
+                                    className="flex items-center gap-2 text-white hover:text-red-400 transition-colors text-sm font-medium"
                                 >
-                                    Visit Site &rarr;
+                                    Visit Site <ExternalLink className="w-3 h-3" />
                                 </a>
                             </div>
                         </div>
-                    </motion.div>
+                    </TiltedCard>
 
-                    <motion.div
-                        whileHover={{ y: -5 }}
-                        className="group relative p-8 rounded-2xl bg-neutral-900/40 backdrop-blur-md border border-white/5 hover:border-red-500/50 transition-all duration-500 overflow-hidden"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="relative z-10">
-                            <h3 className="text-3xl font-bold mb-2 text-white group-hover:text-red-500 transition-colors">Hack Club</h3>
-                            <p className="text-neutral-400 mb-6 font-light tracking-wide">Global Nonprofit Network</p>
-                            <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/10">
-                                <span className="text-sm text-neutral-500 uppercase tracking-widest">Role: Member</span>
+                    <TiltedCard className="h-[400px]">
+                        <div className="p-8 h-full flex flex-col justify-between">
+                            <div>
+                                <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-6 text-red-500">
+                                    <Globe className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-3xl font-bold mb-2 text-white">Hack Club</h3>
+                                <p className="text-neutral-400 font-light tracking-wide">Global Nonprofit Network</p>
+                            </div>
+                            <div className="pt-6 border-t border-white/10">
+                                <span className="block text-xs text-neutral-500 uppercase tracking-widest mb-2">Role: Member</span>
                                 <a
                                     href="https://hackclub.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-white hover:text-red-400 transition-colors"
+                                    className="flex items-center gap-2 text-white hover:text-red-400 transition-colors text-sm font-medium"
                                 >
-                                    Visit Site &rarr;
+                                    Visit Site <ExternalLink className="w-3 h-3" />
                                 </a>
                             </div>
                         </div>
-                    </motion.div>
+                    </TiltedCard>
 
-                    <motion.div
-                        whileHover={{ y: -5 }}
-                        className="group relative p-8 rounded-2xl bg-neutral-900/40 backdrop-blur-md border border-white/5 hover:border-red-500/50 transition-all duration-500 overflow-hidden"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="relative z-10">
-                            <h3 className="text-3xl font-bold mb-2 text-white group-hover:text-red-500 transition-colors">Student</h3>
-                            <p className="text-neutral-400 mb-6 font-light tracking-wide">Indraprastha International School</p>
-                            <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/10">
-                                <span className="text-sm text-neutral-500 uppercase tracking-widest">Grade: Class 9</span>
-                                <span className="text-neutral-600">2018 - Present</span>
+                    <TiltedCard className="h-[400px]">
+                        <div className="p-8 h-full flex flex-col justify-between">
+                            <div>
+                                <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-6 text-red-500">
+                                    <GraduationCap className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-3xl font-bold mb-2 text-white">Student</h3>
+                                <p className="text-neutral-400 font-light tracking-wide">Indraprastha International School</p>
+                            </div>
+                            <div className="pt-6 border-t border-white/10">
+                                <span className="block text-xs text-neutral-500 uppercase tracking-widest mb-2">Grade: Class 9</span>
+                                <span className="text-neutral-600 text-sm font-medium">2018 - Present</span>
                             </div>
                         </div>
-                    </motion.div>
+                    </TiltedCard>
                 </div>
 
                 <motion.h2
