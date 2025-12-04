@@ -4,6 +4,22 @@ import { gsap } from 'gsap';
 import './FlowingMenu.css';
 
 function FlowingMenu({ items = [] }) {
+  React.useEffect(() => {
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20; // Move 20px
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+      gsap.to(".marquee__img", {
+        backgroundPosition: `calc(50% + ${-x}px) calc(50% + ${-y}px)`,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <div className="menu-wrap">
       <nav className="menu">
@@ -64,7 +80,14 @@ function MenuItem({ link, text, image }) {
   const repeatedMarqueeContent = Array.from({ length: 4 }).map((_, idx) => (
     <React.Fragment key={idx}>
       <span>{text}</span>
-      <div className="marquee__img" style={{ backgroundImage: `url(${image})` }} />
+      <div
+        className="marquee__img"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover'
+        }}
+      />
     </React.Fragment>
   ));
 

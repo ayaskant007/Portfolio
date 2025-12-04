@@ -45,12 +45,14 @@ export default function Contact() {
                         </p>
 
                         <div className="flex flex-col gap-6">
-                            <a href="mailto:ayaskantsahoo007@gmail.com" className="flex items-center gap-4 text-2xl hover:text-red-500 transition-colors group">
-                                <span className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-red-500 group-hover:bg-red-500/10 transition-all">
-                                    <Mail className="w-5 h-5" />
-                                </span>
-                                ayaskantsahoo007@gmail.com
-                            </a>
+                            <Magnet>
+                                <a href="mailto:ayaskantsahoo007@gmail.com" className="flex items-center gap-4 text-2xl hover:text-red-500 transition-colors group w-fit">
+                                    <span className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-red-500 group-hover:bg-red-500/10 transition-all">
+                                        <Mail className="w-5 h-5" />
+                                    </span>
+                                    ayaskantsahoo007@gmail.com
+                                </a>
+                            </Magnet>
                             <div className="flex items-center gap-4 text-2xl text-neutral-400">
                                 <span className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
                                     <MapPin className="w-5 h-5" />

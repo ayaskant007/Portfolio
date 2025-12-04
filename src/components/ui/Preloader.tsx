@@ -10,13 +10,25 @@ export default function Preloader() {
 
     useEffect(() => {
         let currentIndex = 0;
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+
         const interval = setInterval(() => {
             if (currentIndex <= fullText.length) {
-                setText(fullText.slice(0, currentIndex));
+                const glitchedText = fullText
+                    .slice(0, currentIndex)
+                    .split("")
+                    .map((char, index) => {
+                        if (index < currentIndex - 2) return char;
+                        return chars[Math.floor(Math.random() * chars.length)];
+                    })
+                    .join("");
+
+                setText(glitchedText);
                 currentIndex++;
             } else {
+                setText(fullText); // Ensure final text is correct
                 clearInterval(interval);
-                setTimeout(() => setIsLoading(false), 500);
+                setTimeout(() => setIsLoading(false), 800);
             }
         }, 50);
 
