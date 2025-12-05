@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import SplashCursor from "@/components/ui/SplashCursor";
 import Preloader from "@/components/ui/Preloader";
+import Curtain from "@/components/ui/Curtain";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
 import FloatingDock from "@/components/ui/FloatingDock";
@@ -60,6 +61,7 @@ export default function RootLayout({
         className={`${outfit.variable} antialiased bg-black text-white overflow-x-hidden`}
       >
         <Preloader />
+        <Curtain />
         <ScrollProgress />
         <SplashCursor />
         {children}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { gsap } from 'gsap';
+import LiquidImage from './ui/LiquidImage';
 
 import './FlowingMenu.css';
 
@@ -35,6 +36,7 @@ function MenuItem({ link, text, image }) {
   const itemRef = React.useRef(null);
   const marqueeRef = React.useRef(null);
   const marqueeInnerRef = React.useRef(null);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const animationDefaults = { duration: 0.6, ease: 'expo' };
 
@@ -51,6 +53,7 @@ function MenuItem({ link, text, image }) {
   };
 
   const handleMouseEnter = ev => {
+    setIsHovered(true);
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const x = ev.clientX - rect.left;
@@ -65,6 +68,7 @@ function MenuItem({ link, text, image }) {
   };
 
   const handleMouseLeave = ev => {
+    setIsHovered(false);
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const x = ev.clientX - rect.left;
@@ -80,14 +84,9 @@ function MenuItem({ link, text, image }) {
   const repeatedMarqueeContent = Array.from({ length: 4 }).map((_, idx) => (
     <React.Fragment key={idx}>
       <span>{text}</span>
-      <div
-        className="marquee__img"
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover'
-        }}
-      />
+      <div className="marquee__img">
+        <LiquidImage src={image} isActive={isHovered} className="w-full h-full object-cover" />
+      </div>
     </React.Fragment>
   ));
 

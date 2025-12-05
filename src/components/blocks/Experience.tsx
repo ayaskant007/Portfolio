@@ -6,12 +6,13 @@ import { Code, Globe, GraduationCap, ExternalLink } from "lucide-react";
 // @ts-ignore
 import MagicBento from "../MagicBento";
 import SplitText from "../ui/SplitText";
+import SpotlightText from "../ui/SpotlightText";
 import TiltedCard from "../ui/TiltedCard";
 
 export default function Experience() {
-    const { scrollYProgress } = useScroll();
-    const skewVelocity = useVelocity(scrollYProgress);
-    const skew = useTransform(skewVelocity, [0, 1], [0, 5], { clamp: false });
+    const { scrollY } = useScroll();
+    const skewVelocity = useVelocity(scrollY);
+    const skew = useTransform(skewVelocity, [0, 1000], [0, 5], { clamp: false });
     const smoothSkew = useSpring(skew, { stiffness: 400, damping: 90 });
 
     return (
@@ -23,7 +24,7 @@ export default function Experience() {
                     transition={{ duration: 0.8 }}
                     className="text-3xl md:text-5xl font-bold mb-8 tracking-tight flex justify-center"
                 >
-                    <SplitText text="AFFILIATIONS" delay={0.2} />
+                    <SpotlightText text="AFFILIATIONS" />
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-32">
                     <TiltedCard className="h-[400px]">
@@ -95,7 +96,7 @@ export default function Experience() {
                     transition={{ duration: 0.8 }}
                     className="text-3xl md:text-5xl font-bold mb-8 mt-16 tracking-tight relative z-20 bg-black inline-block px-4"
                 >
-                    <SplitText text="TECHNICAL SKILLS" delay={0.2} />
+                    <SpotlightText text="TECHNICAL SKILLS" />
                 </motion.h2>
 
                 <div className="relative max-w-4xl mx-auto mt-16 min-h-[800px]">
