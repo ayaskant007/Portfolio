@@ -48,7 +48,7 @@ extend({ LiquidMaterial });
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            liquidMaterial: ReactThreeFiber.Object3DNode<THREE.ShaderMaterial, typeof LiquidMaterial>;
+            liquidMaterial: any;
         }
     }
 }
