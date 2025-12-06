@@ -37,6 +37,14 @@ function MenuItem({ link, text, image }) {
   const marqueeRef = React.useRef(null);
   const marqueeInnerRef = React.useRef(null);
   const [isHovered, setIsHovered] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const animationDefaults = { duration: 0.6, ease: 'expo' };
 
@@ -53,6 +61,7 @@ function MenuItem({ link, text, image }) {
   };
 
   const handleMouseEnter = ev => {
+    if (isMobile) return;
     setIsHovered(true);
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
@@ -68,6 +77,7 @@ function MenuItem({ link, text, image }) {
   };
 
   const handleMouseLeave = ev => {
+    if (isMobile) return;
     setIsHovered(false);
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
@@ -85,7 +95,7 @@ function MenuItem({ link, text, image }) {
     <React.Fragment key={idx}>
       <span>{text}</span>
       <div className="marquee__img">
-        <LiquidImage src={image} isActive={isHovered} className="w-full h-full object-cover" />
+        <LiquidImage src={image} isActive={isMobile || isHovered} className="w-full h-full object-cover" />
       </div>
     </React.Fragment>
   ));
@@ -95,8 +105,16 @@ function MenuItem({ link, text, image }) {
       <a className="menu__item-link" href={link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {text}
       </a>
-      <div className="marquee" ref={marqueeRef}>
-        <div className="marquee__inner-wrap" ref={marqueeInnerRef}>
+      <div
+        className="marquee"
+        ref={marqueeRef}
+        style={isMobile ? { transform: 'translate3d(0, 0%, 0)' } : undefined}
+      >
+        <div
+          className="marquee__inner-wrap"
+          ref={marqueeInnerRef}
+          style={isMobile ? { transform: 'translate3d(0, 0%, 0)' } : undefined}
+        >
           <div className="marquee__inner" aria-hidden="true">
             {repeatedMarqueeContent}
           </div>

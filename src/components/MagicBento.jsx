@@ -531,7 +531,7 @@ const MagicBento = ({
                 <div className="magic-bento-card__content">
                   <h2
                     className={`magic-bento-card__title ${card.fontSize || 'text-xl'} font-black`}
-                    style={card.titleStyle}
+                    style={isMobile ? { fontSize: '2rem', lineHeight: '1.1' } : card.titleStyle}
                   >
                     {card.title}
                   </h2>
@@ -659,7 +659,7 @@ const MagicBento = ({
               <div className="magic-bento-card__content">
                 <h2
                   className={`magic-bento-card__title ${card.fontSize || 'text-xl'} font-black`}
-                  style={card.titleStyle}
+                  style={isMobile ? { fontSize: '2rem', lineHeight: '1.1' } : card.titleStyle}
                 >
                   {card.title}
                 </h2>

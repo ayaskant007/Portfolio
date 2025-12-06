@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 import { motion } from "framer-motion";
 import Iridescence from "../ui/Iridescence";
 import SplitText from "../ui/SplitText";
-import SpotlightText from "../ui/SpotlightText";
+import DecryptedText from "../ui/DecryptedText";
 
 
 interface MenuItem {
@@ -28,7 +28,7 @@ export default function Projects() {
                         WORK
                     </h2>
                     <h2 className="text-5xl md:text-7xl font-bold relative z-10 tracking-tighter flex justify-center gap-4">
-                        <SpotlightText text="SELECTED" /> <span className="text-red-600"><SpotlightText text="PROJECTS" /></span>
+                        <DecryptedText text="SELECTED" animateOn="view" revealDirection="start" /> <span className="text-red-600"><DecryptedText text="PROJECTS" animateOn="view" revealDirection="end" /></span>
                     </h2>
                 </div>
                 <div className="h-[600px] w-full relative z-10">
