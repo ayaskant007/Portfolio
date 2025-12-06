@@ -449,8 +449,12 @@ const GlobalSpotlight = ({
   return null;
 };
 
-const BentoCardGrid = ({ children, gridRef }) => (
-  <div className="card-grid bento-section" ref={gridRef}>
+const BentoCardGrid = ({ children, gridRef, isMobile }) => (
+  <div
+    className="card-grid bento-section"
+    ref={gridRef}
+    style={isMobile ? { gridTemplateColumns: 'repeat(2, 1fr)' } : undefined}
+  >
     {children}
   </div>
 );
@@ -500,7 +504,7 @@ const MagicBento = ({
         />
       )}
 
-      <BentoCardGrid gridRef={gridRef}>
+      <BentoCardGrid gridRef={gridRef} isMobile={isMobile}>
         {cards.map((card, index) => {
           const baseClassName = `magic-bento-card ${textAutoHide ? 'magic-bento-card--text-autohide' : ''} ${enableBorderGlow ? 'magic-bento-card--border-glow' : ''}`;
           const cardProps = {
@@ -508,7 +512,7 @@ const MagicBento = ({
             style: {
               backgroundColor: card.color,
               '--glow-color': glowColor,
-              gridColumn: isMobile ? 'auto' : `span ${card.colSpan || 1}`,
+              gridColumn: isMobile ? (card.colSpan >= 2 ? 'span 2' : 'span 1') : `span ${card.colSpan || 1}`,
               gridRow: isMobile ? 'auto' : `span ${card.rowSpan || 1}`
             }
           };

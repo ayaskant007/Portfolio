@@ -18,7 +18,7 @@ export default function Contact() {
     }, []);
 
     return (
-        <footer id="contact" className="fixed bottom-0 left-0 w-full h-screen md:min-h-[800px] bg-neutral-950 text-white flex flex-col justify-between -z-10 px-4 md:px-10 py-20 overflow-hidden">
+        <footer id="contact" className="relative md:fixed bottom-0 left-0 w-full md:h-screen md:min-h-[800px] bg-neutral-950 text-white flex flex-col justify-between z-0 md:-z-10 px-4 md:px-10 py-20 overflow-hidden min-h-screen md:min-h-0">
             {/* Background Text */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 select-none overflow-hidden">
                 <h1 className="text-[20vw] font-black text-neutral-800 tracking-tighter whitespace-nowrap">
