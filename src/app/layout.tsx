@@ -4,11 +4,12 @@ import "./globals.css";
 import SplashCursor from "@/components/ui/SplashCursor";
 import Preloader from "@/components/ui/Preloader";
 import Curtain from "@/components/ui/Curtain";
-import ScrollProgress from "@/components/ui/ScrollProgress";
-import BackToTop from "@/components/ui/BackToTop";
 import FloatingDock from "@/components/ui/FloatingDock";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import Noise from "@/components/ui/Noise";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import BackToTop from "@/components/ui/BackToTop";
+import Terminal from "@/components/effects/Terminal";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -69,6 +70,7 @@ export default function RootLayout({
         <FloatingDock />
         <SmoothScroll />
         <Noise />
+        <Terminal />
       </body>
     </html>
   );
