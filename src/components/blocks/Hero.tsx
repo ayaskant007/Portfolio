@@ -3,10 +3,12 @@ import StarField from "../ui/StarField";
 import LetterGlitch from "../ui/LetterGlitch";
 import Magnet from "../ui/Magnet";
 import Iridescence from "../ui/Iridescence";
+import Gravity from "../games/Gravity";
 
 export default function Hero() {
     return (
         <section id="hero" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+            <Gravity triggerId="gravity-trigger" />
             <StarField />
             <div className="absolute inset-0 z-0 opacity-40">
                 <Iridescence />
@@ -21,8 +23,13 @@ export default function Hero() {
                         />
                     </Magnet>
                 </div>
-                <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-white">
+                <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-white flex items-end justify-center">
                     <LetterGlitch text="AYASKANT SAHOO" speed={75} />
+                    <span
+                        id="gravity-trigger"
+                        className="text-red-600 opacity-50 hover:opacity-100 cursor-pointer transition-opacity duration-300 ml-1 inline-block"
+                        title="⚠"
+                    >.</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-neutral-400 font-light tracking-wide">
                     <LetterGlitch text="DEVELOPER / STUDENT" speed={50} />
