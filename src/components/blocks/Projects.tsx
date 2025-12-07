@@ -27,7 +27,7 @@ export default function Projects() {
                     <h2 className="text-[12vw] md:text-[8rem] font-black text-transparent stroke-text tracking-tighter opacity-20 select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none">
                         WORK
                     </h2>
-                    <h2 className="text-5xl md:text-7xl font-bold relative z-10 tracking-tighter flex justify-center gap-4">
+                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold relative z-10 tracking-tighter flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
                         <DecryptedText text="SELECTED" animateOn="view" revealDirection="start" /> <span className="text-red-600"><DecryptedText text="PROJECTS" animateOn="view" revealDirection="end" /></span>
                     </h2>
                 </div>
