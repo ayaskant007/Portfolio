@@ -111,9 +111,9 @@ export default function Terminal() {
                         <div className="space-y-2">
                             <p>Loading project modules...</p>
                             <ul className="space-y-1 mt-2">
-                                <li><a href="#projects" className="text-green-300 hover:underline">[DIR] Parano!a</a> - Unity/C# Thriller Game</li>
-                                <li><a href="https://vikas-bhi-virasat-bhi.netlify.app/" target="_blank" className="text-green-300 hover:underline">[WEB] Vikas Bhi, Virasat Bhi</a> - GSAP 3 Website</li>
-                                <li><a href="#projects" className="text-green-300 hover:underline">[DIR] The Last Ember</a> - Ren'Py Visual Novel</li>
+                                <li><a href="https://github.com/foglomon/Paranoia" target="_blank" className="text-green-300 hover:underline">[DIR] Parano!a</a> - Unity/C# Thriller Game</li>
+                                <li><a href="https://vikasvirasat.netlify.app/" target="_blank" className="text-green-300 hover:underline">[WEB] Vikas Bhi, Virasat Bhi</a> - GSAP 3 Website</li>
+                                <li><a href="https://github.com/ayaskant007/The-Last-Ember" target="_blank" className="text-green-300 hover:underline">[DIR] The Last Ember</a> - Ren'Py Visual Novel</li>
                             </ul>
                         </div>
                     )
