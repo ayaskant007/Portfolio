@@ -23,7 +23,7 @@ export const projects: Project[] = [
         description: "Responsive website for CRYPTICON 2025. Powered by GSAP 3 for smooth animations and hosted on Netlify.",
         tech: ["HTML", "CSS", "JS", "GSAP 3"],
         link: "https://vikasvirasat.netlify.app/",
-        image: "https://images.unsplash.com/photo-1523726491678-bf85ae3815fa?auto=format&fit=crop&q=80&w=2070", // Architecture/Culture
+        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=2070", // Architecture/Culture
     },
     {
         title: "The Last Ember",
