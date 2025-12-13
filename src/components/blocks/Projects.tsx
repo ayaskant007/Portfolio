@@ -36,7 +36,8 @@ export default function Projects() {
                         items={(projects.map((project) => ({
                             link: project.link,
                             text: project.title,
-                            image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2070", // Placeholder or project image
+                            image: project.image || "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2070",
+                            description: project.description
                         })) as any)}
                     />
                 </div>
