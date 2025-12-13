@@ -1,6 +1,7 @@
 import React from 'react';
 import { gsap } from 'gsap';
 import LiquidImage from './ui/LiquidImage';
+import { useAudio } from '@/hooks/useAudio';
 
 import './FlowingMenu.css';
 
@@ -38,6 +39,7 @@ function MenuItem({ link, text, image }) {
   const marqueeInnerRef = React.useRef(null);
   const [isHovered, setIsHovered] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
+  const { playHover } = useAudio();
 
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -63,6 +65,7 @@ function MenuItem({ link, text, image }) {
   const handleMouseEnter = ev => {
     if (isMobile) return;
     setIsHovered(true);
+    playHover();
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const x = ev.clientX - rect.left;

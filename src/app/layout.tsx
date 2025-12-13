@@ -10,6 +10,7 @@ import Noise from "@/components/ui/Noise";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
 import Terminal from "@/components/effects/Terminal";
+import GlobalScanline from "@/components/ui/GlobalScanline";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -70,6 +71,7 @@ export default function RootLayout({
         <FloatingDock />
         <SmoothScroll />
         <Noise />
+        <GlobalScanline />
         <Terminal />
       </body>
     </html>
