@@ -27,8 +27,8 @@ export default function Hero() {
                     <LetterGlitch text="AYASKANT SAHOO" speed={75} />
                     <span
                         id="gravity-trigger"
-                        className="text-red-600 opacity-50 hover:opacity-100 cursor-pointer transition-opacity duration-300 ml-1 inline-block"
-                        title="Decode..."
+                        className="text-red-500 hover:text-red-400 cursor-pointer transition-all duration-300 ml-1 inline-block animate-pulse hover:animate-none hover:scale-125 hover:drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]"
+                        title="Initialize System..."
                         onClick={() => window.dispatchEvent(new Event("open-terminal"))}
                     >.</span>
                 </h1>

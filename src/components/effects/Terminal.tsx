@@ -1,5 +1,7 @@
 "use client";
 
+import { chatWithAI } from "@/app/actions/chat";
+
 import React, { useEffect, useRef, useState } from "react";
 import { X, Terminal as TerminalIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,6 +14,8 @@ type CommandOutput = {
 export default function Terminal() {
     const [isOpen, setIsOpen] = useState(false);
     const [input, setInput] = useState("");
+    const [isChatMode, setIsChatMode] = useState(false);
+    const [isTyping, setIsTyping] = useState(false);
     const [history, setHistory] = useState<CommandOutput[]>([
         { type: "output", content: "AyaskantOS [Version 1.0.0]" },
         { type: "output", content: "(c) 2024 Ayaskant Sahoo. All rights reserved." },
@@ -70,11 +74,39 @@ export default function Terminal() {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
-    }, [history, isOpen]);
+    }, [history, isOpen, isTyping]);
 
-    const handleCommand = (cmd: string) => {
+    const handleCommand = async (cmd: string) => {
         const trimmed = cmd.trim().toLowerCase();
         const newHistory = [...history, { type: "input", content: cmd } as CommandOutput];
+
+        // Handle AI Chat Mode
+        if (isChatMode) {
+            if (trimmed === "exit") {
+                setIsChatMode(false);
+                setHistory(prev => [...prev, { type: "input", content: cmd } as CommandOutput, { type: "success", content: "AI Connection Terminated." }]);
+                setInput("");
+                return;
+            }
+
+            setHistory(newHistory);
+            setInput("");
+            setIsTyping(true);
+
+            try {
+                const response = await chatWithAI(cmd);
+                setIsTyping(false);
+                if (response.success) {
+                    setHistory(prev => [...prev, { type: "output", content: <span className="text-cyan-300">{response.success}</span> }]);
+                } else {
+                    setHistory(prev => [...prev, { type: "error", content: response.error }]);
+                }
+            } catch (e) {
+                setIsTyping(false);
+                setHistory(prev => [...prev, { type: "error", content: "Transmission disrupted." }]);
+            }
+            return;
+        }
 
         switch (trimmed) {
             case "help":
@@ -88,6 +120,7 @@ export default function Terminal() {
                                 <li><span className="text-green-400">projects</span> - View my work</li>
                                 <li><span className="text-green-400">skills</span> - Technical capabilities</li>
                                 <li><span className="text-green-400">socials</span> - Connect with me</li>
+                                <li><span className="text-green-400">chat</span> - <span className="text-cyan-400">Initialize AI Uplink</span></li>
                                 <li><span className="text-green-400">matrix</span> - Toggle data stream</li>
                                 <li><span className="text-green-400">coffee</span> - Fuel the dev</li>
                                 <li><span className="text-green-400">stop</span> - Stop running processes</li>
@@ -97,6 +130,19 @@ export default function Terminal() {
                         </div>
                     )
                 });
+                break;
+            case "chat":
+                newHistory.push({
+                    type: "success",
+                    content: (
+                        <div>
+                            <p>Establishing secure uplink to AyaskantOS Core...</p>
+                            <p className="text-cyan-400 mt-1">Connection Established.</p>
+                            <p className="text-neutral-500 text-xs">Type 'exit' to disconnect.</p>
+                        </div>
+                    )
+                });
+                setIsChatMode(true);
                 break;
             case "about":
                 newHistory.push({
@@ -243,7 +289,7 @@ export default function Terminal() {
                                 <div key={i} className={`${entry.type === "error" ? "text-red-500" : entry.type === "success" ? "text-green-300" : "text-green-400"}`}>
                                     {entry.type === "input" ? (
                                         <div className="flex gap-2">
-                                            <span className="text-green-600">➜</span>
+                                            <span className={`${isChatMode ? "text-cyan-500" : "text-green-600"}`}>➜</span>
                                             <span>{entry.content}</span>
                                         </div>
                                     ) : (
@@ -252,9 +298,16 @@ export default function Terminal() {
                                 </div>
                             ))}
 
+                            {/* Typing Indicator */}
+                            {isTyping && (
+                                <div className="text-cyan-500 animate-pulse">
+                                    System is processing...
+                                </div>
+                            )}
+
                             {/* Input Line */}
                             <div className="flex gap-2 items-center">
-                                <span className="text-green-600">➜</span>
+                                <span className={`${isChatMode ? "text-cyan-500" : "text-green-600"}`}>➜</span>
                                 <input
                                     ref={inputRef}
                                     type="text"
@@ -263,22 +316,23 @@ export default function Terminal() {
                                     onKeyDown={(e) => {
                                         if (e.key === "Enter") handleCommand(input);
                                     }}
-                                    className="bg-transparent border-none outline-none flex-1 text-green-400 placeholder-green-900"
+                                    className={`bg-transparent border-none outline-none flex-1 placeholder-green-900 ${isChatMode ? "text-cyan-400" : "text-green-400"}`}
                                     autoFocus
                                     spellCheck={false}
+                                    placeholder={isChatMode ? "Ask something..." : ""}
                                 />
-                                <span className="animate-pulse bg-green-500 w-2 h-4 block"></span>
+                                <span className={`animate-pulse w-2 h-4 block ${isChatMode ? "bg-cyan-500" : "bg-green-500"}`}></span>
                             </div>
                         </div>
 
                         {/* Scanline Overlay */}
                         <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] z-10 opacity-20"></div>
-                        <div className="absolute inset-0 pointer-events-none bg-green-500/5 animate-pulse z-0"></div>
+                        <div className={`absolute inset-0 pointer-events-none animate-pulse z-0 ${isChatMode ? "bg-cyan-900/10" : "bg-green-500/5"}`}></div>
                     </motion.div>
 
                     <style jsx>{`
                         .terminal-scanline {
-                            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+                            box-shadow: 0 0 20px ${isChatMode ? "rgba(0, 255, 255, 0.15)" : "rgba(0, 255, 0, 0.1)"};
                         }
                     `}</style>
                 </div>
