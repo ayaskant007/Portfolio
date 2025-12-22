@@ -41,7 +41,12 @@ You have two main options to deploy your Next.js portfolio to Netlify:
 4.  Select **GitHub**.
 5.  Choose your portfolio repository.
 6.  Netlify should automatically detect the Next.js settings (Build command: `npm run build`, Publish directory: `.next`).
-7.  Click **Deploy**.
+7.  **Environment Variables**:
+    *   Go to **Site Settings** -> **Environment variables**.
+    *   Click **Add a variable**.
+    *   Key: `GROQ_API_KEY`
+    *   Value: `gsk_...` (Your API Key)
+8.  Click **Deploy**.
 
 > [!NOTE]
 > A `netlify.toml` file has been added to your project to help Netlify understand the configuration automatically.
