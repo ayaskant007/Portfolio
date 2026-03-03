@@ -1,11 +1,11 @@
-# ⚡ Ayaskant Sahoo | Portfolio
+#  Ayaskant Sahoo | Portfolio
 
 > A high-performance, interactive creative developer portfolio built with Next.js 16 and React Three Fiber.
 > **Live Site:** [https://ayaskant007.is-a.dev/](https://ayaskant007.is-a.dev/)
 
 ![Banner](/public/avatar.png)
 
-## ✨ Features
+## Features
 
 - **Decrypted Typography**: Custom scrambled text reveal animations using Framer Motion.
 - **Magic Bento Grid**: Responsive grid layout with interactive tilt and spotlight effects.
@@ -20,7 +20,7 @@
   - **Gravity Protocol**: Hidden trigger (pulsing red dot) in the Hero section that activates real-time 2D physics.
 - **Custom UI**: Splash cursor, liquid metal hover effects, and magnetic buttons.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
@@ -31,7 +31,7 @@
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Smooth Scroll**: [Lenis](https://lenis.studiofreight.com/)
 
-## 🚀 Getting Started
+## Getting Started
 
 1.  **Clone the repository**:
     ```bash
@@ -55,14 +55,14 @@
     npm run dev
     ```
 
-## 🎮 Easter Eggs (Spoiler Alert!)
+## Easter Eggs (Spoiler Alert!)
 
 -   **Terminal**: Press `~` or type `help` to access the command line.
 -   **AI Uplink**: Type `chat` in the terminal to talk to the system kernel.
 -   **Gravity**: Find the **pulsing red period** (.) in the Hero text to break the law of physics.
 -   **404 Void**: Visit a non-existent page to defend the system against data corruption.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
