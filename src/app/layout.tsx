@@ -61,6 +61,12 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${outfit.variable} antialiased bg-black text-white overflow-x-hidden`}
       >
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `<!-- \n\n\n\n\n\nSYMPHONY the hidden masterwork\n-->`,
+          }}
+          style={{ display: "none" }}
+        />
         <Preloader />
         <Curtain />
         <ScrollProgress />

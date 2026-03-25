@@ -15,10 +15,11 @@ export default function Terminal() {
     const [isOpen, setIsOpen] = useState(false);
     const [input, setInput] = useState("");
     const [isChatMode, setIsChatMode] = useState(false);
+    const [isSymphonyMode, setIsSymphonyMode] = useState(false);
     const [isTyping, setIsTyping] = useState(false);
     const [history, setHistory] = useState<CommandOutput[]>([
-        { type: "output", content: "AyaskantOS [Version 1.0.0]" },
-        { type: "output", content: "(c) 2024 Ayaskant Sahoo. All rights reserved." },
+        { type: "output", content: "AyaskantOS [Version 2.0.0]" },
+        { type: "output", content: "(c) 2026 Ayaskant Sahoo. All rights reserved." },
         { type: "success", content: 'Type "help" for a list of valid commands.' }
     ]);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -79,6 +80,18 @@ export default function Terminal() {
     const handleCommand = async (cmd: string) => {
         const trimmed = cmd.trim().toLowerCase();
         const newHistory = [...history, { type: "input", content: cmd } as CommandOutput];
+
+        // Handle Symphony Mode
+        if (isSymphonyMode) {
+            setIsSymphonyMode(false);
+            if (trimmed === "57186706") {
+                setHistory([...newHistory, { type: "success", content: "lV8NSZCa3ek" }]);
+            } else {
+                setHistory([...newHistory, { type: "error", content: "You entered the wrong key. Access is denied." }]);
+            }
+            setInput("");
+            return;
+        }
 
         // Handle AI Chat Mode
         if (isChatMode) {
@@ -178,6 +191,10 @@ export default function Terminal() {
                 break;
             case "skills":
                 newHistory.push({ type: "output", content: "Next.js 16, React Three Fiber, Tailwind CSS v4, Framer Motion, GSAP, Matter.js, Unity, Python" });
+                break;
+            case "symphony":
+                newHistory.push({ type: "output", content: "C:\\> TERMINAL ACTIVATED. ENTER DELTA KEY:" });
+                setIsSymphonyMode(true);
                 break;
             case "contact":
                 newHistory.push({ type: "output", content: "Email: contact@ayaskant.dev" });
