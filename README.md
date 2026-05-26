@@ -29,8 +29,8 @@ To run this repository locally, you will need Node.js installed on your machine.
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/ayaskant007/AyaskantOS.git
-cd AyaskantOS
+git clone https://github.com/ayaskant007/Portfolio.git
+cd Portfolio
 ```
 
 **2. Install all dependencies**
