@@ -60,7 +60,20 @@ Navigate to `http://localhost:5173` to experience the operating system.
 
 AI was used to implement the genie animation, and the spotlight search and also sometimes to debug the code.
 
-JS Mastery Tutorial for MacOS Portfolio
+macOS Tahoe
+
+macOS Sequoia
+
+
+JS Mastery Tutorial for macOS Portfolio
+
+---
+
+## Trademarks & Legal
+
+macOS is a trademark of Apple Inc., registered in the U.S. and other countries and regions. 
+
+This portfolio project is independent. It has not been authorized, sponsored, or otherwise approved by Apple Inc. All user interface designs, asset replicas, and conceptual layouts are created strictly for educational and portfolio demonstration purposes.
 
 ---
 
