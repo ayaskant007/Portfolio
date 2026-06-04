@@ -63,7 +63,7 @@ A YSWS Program of [Hack Club](https://hackclub.com)
 
 ---
 
-#Acknowledgments & AI Usage
+## Acknowledgments & AI Usage
 
 Inspiration, code snippets, etc.
 
