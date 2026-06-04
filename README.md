@@ -2,6 +2,8 @@
 
 [Click here to visit my Portfolio!](https://ayaskant007.is-a.dev)
 
+<img width="1911" height="998" alt="image" src="https://github.com/user-attachments/assets/8fe7a49b-b5d8-4a60-ad93-ce9dc0058049" />
+
 My Portfolio is a super immersive, physics-driven web portfolio that mimics modern macOS architecture using React, GSAP 3, and Tailwind CSS v4. It gives a pixel-perfect liquid glass experience right in the browser.
 
 ## Key Features
