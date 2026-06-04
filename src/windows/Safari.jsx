@@ -95,7 +95,6 @@ const Safari = () => {
           </button>
         </div>
 
-        {/* URL Bar */}
         <form
           onSubmit={handleNavigate}
           className="flex-1 flex items-center justify-center mx-4"
@@ -133,7 +132,6 @@ const Safari = () => {
         </div>
       </div>
 
-      {/* Tab Bar */}
       {tabs.length > 1 && (
         <div
           className="flex items-center px-2 py-1 gap-1 overflow-x-auto"
@@ -173,7 +171,6 @@ const Safari = () => {
         </div>
       )}
 
-      {/* Content - iframe */}
       <div className="flex-1 bg-white relative">
         {loadedUrl === "about:blank" ? (
           <div

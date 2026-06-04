@@ -13,7 +13,6 @@ const DesktopWidgets = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Fetch weather for New Delhi from Open-Meteo (free, no API key)
     useEffect(() => {
         fetch(
             "https://api.open-meteo.com/v1/forecast?latitude=28.6139&longitude=77.209&current_weather=true&timezone=Asia/Kolkata",
@@ -62,7 +61,6 @@ const DesktopWidgets = () => {
 
     return (
         <div className="fixed top-14 right-6 z-[1] flex flex-col gap-3 select-none max-sm:hidden">
-            {/* Clock Widget */}
             <div className="rounded-2xl p-4 w-40" style={glassStyle}>
                 <p
                     className={`text-3xl font-light tracking-tight text-center ${isDark ? "text-white" : "text-gray-800"}`}
@@ -81,7 +79,6 @@ const DesktopWidgets = () => {
                 </p>
             </div>
 
-            {/* Weather Widget */}
             {weather && (
                 <div className="rounded-2xl p-4 w-40" style={glassStyle}>
                     <div className="flex items-center justify-between">
@@ -109,7 +106,6 @@ const DesktopWidgets = () => {
                 </div>
             )}
 
-            {/* Calendar Mini Widget */}
             <div className="rounded-2xl p-3 w-40" style={glassStyle}>
                 <p
                     className={`text-xs font-semibold text-center uppercase tracking-wider mb-2 ${isDark ? "text-red-400" : "text-red-600"}`}

@@ -87,7 +87,6 @@ const Spotlight = () => {
                         boxShadow: "0 30px 80px rgba(0,0,0,0.4)",
                     }}
                 >
-                    {/* Search Input */}
                     <div className="flex items-center gap-3 px-5 py-3.5">
                         <Search
                             size={20}
@@ -107,7 +106,6 @@ const Spotlight = () => {
                         />
                     </div>
 
-                    {/* Results */}
                     {results.length > 0 && (
                         <div
                             className={`border-t ${isDark ? "border-white/10" : "border-black/10"} max-h-72 overflow-y-auto`}

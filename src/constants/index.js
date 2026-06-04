@@ -1,5 +1,5 @@
 // ── Ayaskant Sahoo's Personal Portfolio Data ──
-// All data sourced from old_portfolio
+
 
 const navLinks = [
   { id: 1, name: "Projects", type: "finder" },
@@ -76,10 +76,9 @@ const blogPosts = [
 
 const techStack = [
   { category: "Languages", items: ["C++", "Python", "C#", "JavaScript"] },
-  { category: "Frontend", items: ["React", "Next.js", "HTML/CSS"] },
-  { category: "Animation", items: ["GSAP 3", "Framer Motion"] },
-  { category: "Styling", items: ["Tailwind CSS", "CSS"] },
-  { category: "Game Dev", items: ["Unity", "Ren'Py", "Blender"] },
+  { category: "Frontend", items: ["React", "Next.js", "HTML/CSS", "GSAP 3", "Framer Motion", "Tailwind CSS"] },
+  { category: "Hardware", items: ["KiCAD", "Autodesk Fusion", "QMK"] },
+  { category: "Game Dev", items: ["Unity", "Unreal", "Blender", "Autodesk Fusion"] },
   { category: "Dev Tools", items: ["Git", "GitHub", "VS Code"] },
 ];
 
@@ -110,7 +109,7 @@ const socials = [
     text: "Email",
     icon: "/icons/mail.svg",
     bg: "#EA4335",
-    link: "mailto:ayaskantsahoo007@gmail.com",
+    link: "mailto:hello@ayaskant007.is-a.dev",
   },
 ];
 

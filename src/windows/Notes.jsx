@@ -11,7 +11,6 @@ const Notes = () => {
 
     return (
         <div className="flex h-full min-h-[400px]">
-            {/* Sidebar */}
             <div
                 className="w-56 flex-shrink-0 flex flex-col border-r overflow-y-auto rounded-bl-xl"
                 style={{
@@ -76,7 +75,6 @@ const Notes = () => {
                 </div>
             </div>
 
-            {/* Content */}
             <div
                 className="flex-1 overflow-y-auto p-8 rounded-br-xl"
                 style={{

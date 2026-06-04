@@ -67,7 +67,6 @@ const Dock = () => {
   const toggleApp = (app) => {
     if (!app.canOpen) return;
 
-    // Bounce animation on click
     const iconEl = document.getElementById(`dock-${app.id}`);
     if (iconEl) {
       gsap.fromTo(
@@ -77,13 +76,11 @@ const Dock = () => {
       );
     }
 
-    // Special handling for trash → open finder at trash location
     if (app.id === "trash") {
       setActiveLocation(locations.trash);
       if (!windows.finder.isOpen) {
         openWindow("finder");
       } else {
-        // Already open, just focus
         useWindowStore.getState().focusWindow("finder");
         restoreWindow("finder");
       }
@@ -131,7 +128,6 @@ const Dock = () => {
 
           return (
             <div key={id} className="relative flex flex-col items-center">
-              {/* Separator before trash */}
               {id === "trash" && (
                 <div
                   className={`absolute -left-1.5 top-1 bottom-1 w-px ${isDark ? "bg-white/15" : "bg-black/15"}`}
@@ -154,7 +150,6 @@ const Dock = () => {
                   className={canOpen ? "" : "opacity-60"}
                 />
               </button>
-              {/* Open indicator dot */}
               {isOpen && (
                 <div
                   className={`w-1 h-1 rounded-full mt-0.5 ${isDark ? "bg-white/60" : "bg-black/40"}`}

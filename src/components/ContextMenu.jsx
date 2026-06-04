@@ -12,7 +12,6 @@ const ContextMenu = () => {
 
     useEffect(() => {
         const handleContextMenu = (e) => {
-            // Only trigger on desktop background (main or #home)
             const target = e.target;
             if (
                 target.closest("nav") ||

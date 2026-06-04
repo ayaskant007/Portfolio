@@ -290,7 +290,7 @@ const Terminal = () => {
           <p>Loading project modules...</p>
           <ul className="space-y-1 mt-2">
             <li>
-              <a href="https://github.com/ayaskant007/Meridian-87" target="_blank" className="text-green-300 hover:underline">[DIR] Meridian 87 TKL Keyboard</a> - A Mechanical TKL Keyboard
+              <a href="https://github.com/ayaskant007/Beat-View" target="_blank" className="text-green-300 hover:underline">[DIR] Beat View</a> - A Spotify Display & Controller
             </li>
             <li>
               <li></li>

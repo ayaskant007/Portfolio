@@ -12,7 +12,6 @@ const Home = () => {
     const { openWindow, focusWindow } = useWindowStore();
 
     const handleOpenProjectFinder = (project, e) => {
-        // Only open finder if we didn't drag it
         if (!e.defaultPrevented) {
           setActiveLocation(project);
           openWindow("finder");
@@ -25,8 +24,6 @@ const Home = () => {
           bounds: "#home",
           inertia: true,
           onClick: function() {
-            // GSAP Draggable onClick handler
-            // The actual click handler is on the element itself
           }
         });
     }, [])

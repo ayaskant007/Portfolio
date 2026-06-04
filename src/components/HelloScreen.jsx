@@ -7,7 +7,6 @@ const HelloScreen = () => {
     const setBootPhase = useThemeStore((s) => s.setBootPhase);
 
     useEffect(() => {
-        // Finish boot sequence after ~5 seconds
         const timer = setTimeout(() => {
             gsap.to("#hello-screen", {
                 opacity: 0,
@@ -27,7 +26,7 @@ const HelloScreen = () => {
                 position: "fixed",
                 inset: 0,
                 backgroundColor: "#000",
-                display: "flex", // Centers the lottie animation perfectly on the screen
+                display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 zIndex: 9999,

@@ -16,7 +16,6 @@ const Settings = () => {
 
     return (
         <div className="flex h-full min-h-[380px]">
-            {/* Sidebar */}
             <div
                 className="w-52 flex-shrink-0 flex flex-col border-r rounded-bl-xl"
                 style={{
@@ -69,7 +68,6 @@ const Settings = () => {
                 </div>
             </div>
 
-            {/* Content */}
             <div
                 className="flex-1 overflow-y-auto p-6 rounded-br-xl"
                 style={{
@@ -85,7 +83,6 @@ const Settings = () => {
                         </h2>
 
                         <div className="flex gap-4">
-                            {/* Light */}
                             <button
                                 onClick={() => setDark(false)}
                                 className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${!isDark
@@ -123,7 +120,6 @@ const Settings = () => {
                                 </span>
                             </button>
 
-                            {/* Auto */}
                             <button
                                 className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${isDark
                                         ? "border-white/10 bg-white/5 hover:bg-white/10"

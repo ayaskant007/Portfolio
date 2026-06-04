@@ -69,7 +69,6 @@ const ControlCenter = () => {
                 }}
             >
                 <div className="p-4 space-y-4">
-                    {/* Connection Toggles */}
                     <div
                         className="rounded-xl p-3"
                         style={{
@@ -100,7 +99,6 @@ const ControlCenter = () => {
                         </div>
                     </div>
 
-                    {/* Dark Mode Toggle */}
                     <div
                         className="rounded-xl p-3 flex items-center justify-between"
                         style={{
@@ -133,7 +131,6 @@ const ControlCenter = () => {
                         </button>
                     </div>
 
-                    {/* Brightness Slider */}
                     <div
                         className="rounded-xl p-3"
                         style={{
@@ -166,7 +163,6 @@ const ControlCenter = () => {
                         />
                     </div>
 
-                    {/* Sound Slider */}
                     <div
                         className="rounded-xl p-3"
                         style={{

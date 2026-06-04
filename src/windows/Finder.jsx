@@ -54,7 +54,6 @@ const Finder = () => {
 
   return (
     <div className="flex flex-col h-full min-h-[400px]">
-      {/* Header / Toolbar */}
       <div
         id="window-header"
         className="flex items-center px-4 py-2 border-b"
@@ -71,7 +70,6 @@ const Finder = () => {
           <WindowControls target="finder" />
         </div>
 
-        {/* Toolbar Controls */}
         <div className="flex-1 flex justify-between items-center ml-4">
           <div className="flex items-center gap-2">
             <button
@@ -122,7 +120,6 @@ const Finder = () => {
       </div>
 
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
         <div
           className="w-48 flex-shrink-0 pt-4 overflow-y-auto border-r"
           style={{
@@ -138,7 +135,6 @@ const Finder = () => {
           {renderList("My Projects", locations.work.children)}
         </div>
 
-        {/* Content Area */}
         <div
           className="flex-1 overflow-y-auto relative p-6"
           style={{
