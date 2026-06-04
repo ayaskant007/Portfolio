@@ -78,6 +78,9 @@ This portfolio project is independent. It has not been authorized, sponsored, or
 ---
 
 Licensed under the MIT License.
+
 Developed by Ayaskant Sahoo.
+
 Project made for [#horizons](https://horizons.hackclub.com)
+
 A YSWS Program of [Hack Club](https://hackclub.com)
