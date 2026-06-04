@@ -56,16 +56,16 @@ Navigate to `http://localhost:5173` to experience the operating system.
 
 ---
 
-Licensed under the MIT License.
-Developed by Ayaskant Sahoo.
-Project made for [#horizons](https://horizons.hackclub.com)
-A YSWS Program of [Hack Club](https://hackclub.com)
-
----
-
 ## Acknowledgments & AI Usage
 
 Inspiration, code snippets, etc.
 
 AI was used to implement the genie animation, and the spotlight search and also sometimes to debug the code.
 JS Mastery Tutorial for MacOS Portfolio
+
+---
+
+Licensed under the MIT License.
+Developed by Ayaskant Sahoo.
+Project made for [#horizons](https://horizons.hackclub.com)
+A YSWS Program of [Hack Club](https://hackclub.com)
