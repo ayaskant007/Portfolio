@@ -4,9 +4,9 @@ import WindowWrapper from "#hoc/WindowWrapper";
 
 const SYSTEM_PROMPT = `You are "AyaskantOS Kernel", a cyberpunk-themed system interface for Ayaskant Sahoo's portfolio.
 DATA: Name: Ayaskant Sahoo. Role: Developer & Student. Location: New Delhi, India.
-Tech: C++, Python, C#, JavaScript, React, GSAP, Unity, Ren'Py.
+Tech: C++, Python, C#, React, TypeScript, Unity.
 Projects: Parano!a (Unity Horror), Vikas Bhi Virasat Bhi (GSAP Website), The Last Ember (Ren'Py Novel).
-Contact: ayaskantsahoo007@gmail.com. GitHub: @ayaskant007.
+Contact: ayaskantsahoo007@gmail.com or hello@ayaskant007.is-a.dev. GitHub: @ayaskant007.
 RULES: Keep responses short and terminal-like (under 50 words). Use tech jargon. Refuse unrelated topics.`;
 
 const Terminal = () => {
@@ -80,7 +80,6 @@ const Terminal = () => {
     const trimmed = cmd.trim().toLowerCase();
     const newHistory = [...history, { type: "input", content: cmd }];
 
-    // AI Chat mode
     if (isChatMode) {
       if (trimmed === "exit") {
         setIsChatMode(false);
@@ -131,7 +130,7 @@ const Terminal = () => {
         newHistory.push({
           type: "output",
           content:
-            "I am Ayaskant Sahoo, a Developer & Student from New Delhi. I build web experiences, games, and interactive software using C++, Python, React, GSAP, Unity, and more.",
+            "I am Ayaskant Sahoo, a Software and Hardware Developer & a Student from New Delhi. I build web experiences, hardware related stuff, and interactive software using C++, Python, React, GSAP, Unity, and more.",
         });
         break;
       case "projects":
@@ -152,13 +151,13 @@ const Terminal = () => {
         newHistory.push({
           type: "output",
           content:
-            "C++, Python, C#, JavaScript, React, Next.js, GSAP 3, Framer Motion, Tailwind CSS, Unity, Ren'Py, Blender",
+            "C++, Python, C#, TypeScript, React, Next.js, Unity, PCB designing, Autodesk Fusion",
         });
         break;
       case "contact":
         newHistory.push({
           type: "output",
-          content: "Email: ayaskantsahoo007@gmail.com",
+          content: "Email: ayaskantsahoo007@gmail.com or hello@ayaskant007.is-a.dev",
         });
         break;
       case "coffee":
@@ -291,6 +290,12 @@ const Terminal = () => {
           <p>Loading project modules...</p>
           <ul className="space-y-1 mt-2">
             <li>
+              <a href="https://github.com/ayaskant007/Meridian-87" target="_blank" className="text-green-300 hover:underline">[DIR] Meridian 87 TKL Keyboard</a> - A Mechanical TKL Keyboard
+            </li>
+            <li>
+              <li></li>
+            </li>
+            <li>
               <a href="https://github.com/foglomon/Paranoia" target="_blank" className="text-green-300 hover:underline">[DIR] Parano!a</a> - Unity/C# Thriller Game
             </li>
             <li>
@@ -392,7 +397,6 @@ const Terminal = () => {
         </div>
       </div>
 
-      {/* Scanline overlay */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_2px] opacity-10 rounded-xl" />
     </>
   );

@@ -52,4 +52,6 @@ npm run dev
 Navigate to `http://localhost:5173` to experience the operating system.
 
 ---
-*If you find any bugs or have performance improvements, feel free to open a PR! Built with ☕ and code by Ayaskant Sahoo.*
+
+Licensed under the MIT License.
+Developed by Ayaskant Sahoo.
