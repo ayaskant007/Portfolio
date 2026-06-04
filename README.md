@@ -6,7 +6,7 @@
 
 ---
 
-My Portfolio is a MacOS-like web portfolio that mimics modern macOS architecture using React, GSAP 3, and Tailwind CSS v4.
+My Portfolio is a MacOS-like web portfolio that mimics modern macOS architecture using React, GSAP 3, and Tailwind CSS v4. It has features like desktop widgets, custom made fully working apps like Safari/Terminal, a Control Center etc.
 
 ---
 
