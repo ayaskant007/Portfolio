@@ -68,9 +68,45 @@ const blogPosts = [
   {
     id: 6,
     date: "March 14, 2026",
-    title: ".ayas Studio: [Blog WIP]",
-    content: "[Blog WIP]",
+    title: ".ayas Studio: A custom-made image extension and filter",
+    content:
+      ".ayas Image Studio is a custom-made python desktop app (based on tkinter and ctkinter) which adds my own image format ```.ayas```. The app has a converter and a viewer, the converter converts a normal image file into a .ayas image file and the viewer can be used to view the file.",
     link: "https://github.com/ayaskant007/.ayas",
+  },
+  {
+    id: 7,
+    date: "May 30, 2026",
+    title: "Shadow Auction: A 3D horror game built using Unity 6.",
+    content: "[PROJECT WORK IN PROGRESS]",
+    link: "https://github.com/ayaskant007/",
+  },
+  {
+    id: 8,
+    date: "May 30, 2026",
+    title: "Beat View: A custom-made Spotify Display & Controller",
+    content: "[BLOG WORK IN PROGRESS]",
+    link: "https://github.com/ayaskant007/",
+  },
+  {
+    id: 9,
+    date: "May 30, 2026",
+    title: "Viper: A new era of search-engines",
+    content: "[PROJECT WORK IN PROGRESS]",
+    link: "https://github.com/ayaskant007/",
+  },
+  {
+    id: 10,
+    date: "May 30, 2026",
+    title: "Aegis AI: A Cyber-Security focused AI Chatbot for Windows.",
+    content: "[PROJECT WORK IN PROGRESS]",
+    link: "https://github.com/ayaskant007/",
+  },
+  {
+    id: 10,
+    date: "May 30, 2026",
+    title: "Meridian 87: A wireless 75% exploded layout keyboard.",
+    content: "[PROJECT WORK IN PROGRESS]",
+    link: "https://github.com/ayaskant007/",
   },
 ];
 
